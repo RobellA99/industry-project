@@ -1,0 +1,46 @@
+.card {
+  padding: 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.8rem 0 0.5rem;
+  }
+
+  &__header {
+    color: white;
+    font-weight: 500;
+    font-family: "Inter";
+    font-size: 0.8rem;
+  }
+
+  &__question-mark {
+    background-color: none;
+  }
+
+  &__article {
+    border-radius: 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: "Inter";
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 0.7rem;
+    width: 60%;
+    font-weight: 500;
+  }
+
+  &__title-price {
+    color: #57bc71;
+  }
+
+  &__image-open {
+    width: 100%;
+  }
+}

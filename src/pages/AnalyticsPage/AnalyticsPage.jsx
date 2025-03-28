@@ -9,15 +9,22 @@ import TopCategories from "../../assets/images/top-categories.png";
 import TopCategoriesAmount from "../../assets/images/top-categories-amount.png";
 import Tracker from "../../assets/images/tracker.png";
 import Category from "../../assets/images/category-breakdown.png";
-import IphoneBar from "../../assets/images/iphone-bar.png";
 import Header from "../../assets/images/analytics-header.png";
 import Title from "../../assets/images/monthly-spending-title.png";
-import SpendingInsightOpen from "../../assets/images/spending-insights-open.png";
 import TopCategoriesOpen from "../../assets/images/top-categories-open.png";
 import { useState } from "react";
+import SpendingInsights from "../../components/SpendingInsights/SpendingInsights";
+
+import SpendingInsightsOpen from "../../assets/images/spending-insights-open.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function AnalyticsPage() {
   const [isClicked, setIsClicked] = useState(false);
+
+  const [expanded, setExpanded] = useState(false);
+
+  // const Accordion = ({ i, expanded, setExpanded }) => {
+  //   const isOpen = i === expanded;
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -42,19 +49,40 @@ export default function AnalyticsPage() {
           className="container__graph-insights"
         />
       </div>
-      <div className="container__spending-insights" onClick={handleClick}>
-        {isClicked ? (
-          <img src={SpendingInsightOpen} alt="Open Card" />
-        ) : (
-          <img src={SpendingInsight} alt="Spending Overview" />
-        )}
-      </div>
-      <div className="container__top-categories">
-        <img
-          src={isClicked ? TopCategoriesOpen : TopCategories}
-          alt="Top Spending Categories"
-        />
 
+      <div className="container__spending-insights" onClick={handleClick}>
+        <SpendingInsights />
+        <AnimatePresence initial={false}>
+          {isClicked && (
+            <motion.section
+              key="content"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: isClicked ? "auto" : 0,
+                opacity: isClicked ? 1 : 0,
+              }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{
+                height: { duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] },
+                opacity: { duration: 0.3 },
+              }}
+            >
+              <img
+                src={TopCategoriesOpen}
+                alt="Top Spending Categories"
+                className="container__spending-insights-image"
+              />
+            </motion.section>
+          )}
+        </AnimatePresence>
+      </div>
+      {isClicked ? (
+        <img src={SpendingInsightsOpen} alt="Open Card" />
+      ) : (
+        <img src={SpendingInsight} alt="Spending Overview" />
+      )}
+
+      <div className="container__top-categories">
         {!isClicked && (
           <>
             <div className="container__top-categories-amount-container">
@@ -75,9 +103,6 @@ export default function AnalyticsPage() {
             </div>
           </>
         )}
-      </div>
-      <div className="container__top-categories-nav">
-        <img src={IphoneBar} alt="Iphone Navigation Bar" />
       </div>
     </div>
   );
