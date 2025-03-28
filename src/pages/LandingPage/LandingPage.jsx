@@ -47,7 +47,7 @@ export default function LandingPage() {
         alt="Transaction List"
         className="container__transactions-image"
       />
-      <img src={Nav} alt="Navigation" className="container__image" />
+      <img src={Nav} alt="Navigation" className="container__navigation-image" />
     </div>
   );
 }

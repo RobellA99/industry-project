@@ -12,8 +12,17 @@ import Category from "../../assets/images/category-breakdown.png";
 import IphoneBar from "../../assets/images/iphone-bar.png";
 import Header from "../../assets/images/analytics-header.png";
 import Title from "../../assets/images/monthly-spending-title.png";
+import SpendingInsightOpen from "../../assets/images/spending-insights-open.png";
+import TopCategoriesOpen from "../../assets/images/top-categories-open.png";
+import { useState } from "react";
 
 export default function AnalyticsPage() {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <div className="container">
       <img src={Bar} alt="Status Bar" className="container__status-image" />
@@ -33,23 +42,35 @@ export default function AnalyticsPage() {
           className="container__graph-insights"
         />
       </div>
-      <div className="container__spending-insights">
-        <img src={SpendingInsight} alt="Spending Overview" />
+      <div className="container__spending-insights" onClick={handleClick}>
+        {isClicked ? (
+          <img src={SpendingInsightOpen} alt="Open Card" />
+        ) : (
+          <img src={SpendingInsight} alt="Spending Overview" />
+        )}
       </div>
       <div className="container__top-categories">
-        <img src={TopCategories} alt="Top Spending Categories" />
-        <div className="container__top-categories-amount-container">
-          <img src={TopCategoriesAmount} alt="Top Spending Categories" />
-          <img
-            src={Tracker}
-            alt="Spening Amount Tracker"
-            className="container__top-categories-amount-container-tracker"
-          />
-        </div>
+        <img
+          src={isClicked ? TopCategoriesOpen : TopCategories}
+          alt="Top Spending Categories"
+        />
 
-        <div className="container__top-categories-breakdown">
-          <img src={Category} alt="Category Breakdown" />
-        </div>
+        {!isClicked && (
+          <>
+            <div className="container__top-categories-amount-container">
+              <img src={TopCategoriesAmount} alt="Top Spending Categories" />
+              <img
+                src={Tracker}
+                alt="Spending Amount Tracker"
+                className="container__top-categories-amount-container-tracker"
+              />
+            </div>
+
+            <div className="container__top-categories-breakdown">
+              <img src={Category} alt="Category Breakdown" />
+            </div>
+          </>
+        )}
       </div>
       <div className="container__top-categories-nav">
         <img src={IphoneBar} alt="Iphone Navigation Bar" />
