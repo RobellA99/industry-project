@@ -1,7 +1,7 @@
 export default function () {
   <svg
-    width="82"
-    height="82"
+    width="82px"
+    height="82px"
     viewBox="0 0 82 82"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
