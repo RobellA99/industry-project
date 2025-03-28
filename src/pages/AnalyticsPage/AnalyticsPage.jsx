@@ -58,7 +58,11 @@ export default function AnalyticsPage() {
         {!isClicked && (
           <>
             <div className="container__top-categories-amount-container">
-              <img src={TopCategoriesAmount} alt="Top Spending Categories" />
+              <img
+                src={TopCategoriesAmount}
+                alt="Top Spending Categories"
+                className="container__top-categories-amount-container-amount"
+              />
               <img
                 src={Tracker}
                 alt="Spending Amount Tracker"

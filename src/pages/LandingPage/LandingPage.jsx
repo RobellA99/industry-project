@@ -12,7 +12,7 @@ import Dashboard from "../../assets/images/dashboard.png";
 export default function LandingPage() {
   return (
     <div className="container">
-      <div className="container__nav">
+      <div className="container__home-nav">
         <img
           src={Bar}
           alt="Status Bar"
@@ -39,7 +39,11 @@ export default function LandingPage() {
       />
       <div className="container__dashboard">
         <Link to="/analytics" className="container__dashboard-image">
-          <img src={Dashboard} alt="Dashboard Cards" />
+          <img
+            src={Dashboard}
+            alt="Dashboard Cards"
+            className="container__dashboard-image-cards"
+          />
         </Link>
       </div>
       <img
