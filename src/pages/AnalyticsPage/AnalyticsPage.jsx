@@ -76,9 +76,6 @@ export default function AnalyticsPage() {
           </>
         )}
       </div>
-      <div className="container__top-categories-nav">
-        <img src={IphoneBar} alt="Iphone Navigation Bar" />
-      </div>
     </div>
   );
 }
