@@ -1,3 +1,5 @@
+import SpendSvg from "../SpendSvg/SpendSvg";
+
 export default function MonthlySpend() {
   return (
     <article>
@@ -6,6 +8,7 @@ export default function MonthlySpend() {
         <h3>£350.00</h3>
         <p>£50.00</p>
       </div>
+      <img src={SpendSvg} alt="Monthly Spend Card" />
     </article>
   );
 }
