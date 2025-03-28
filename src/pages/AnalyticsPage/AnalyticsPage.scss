@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    width: 100%;
+    padding: 1rem 0.5rem 5rem;
+  }
+
+  &__status-image {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+    padding: 0.5rem 1.5rem;
+  }
+
+  &__graph {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__graph-title {
+    width: 40%;
+    padding: 2rem 0 1.5rem;
+  }
+
+  &__graph-graph {
+    justify-content: center;
+  }
+
+  &__graph-insights {
+    padding: 1rem 5rem 2rem;
+  }
+
+  &__spending-insights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1.5rem 2rem;
+  }
+
+  &__top-categories {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 3rem;
+  }
+
+  &__top-categories-amount-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 1rem 1rem 2rem;
+  }
+
+  &__top-categories-amount-container-tracker {
+    padding-top: 0.8rem;
+  }
+
+  &__top-categories-breakdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top-categories-nav {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.7rem;
+  }
+}

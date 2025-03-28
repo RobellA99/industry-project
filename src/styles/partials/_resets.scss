@@ -1,0 +1,11 @@
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(180deg, blue 10%, darkblue 30%, black 60%);
+  margin: 0;
+}

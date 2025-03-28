@@ -1,33 +1,53 @@
-import MonthlySpend from "../../components/MonthlySpend/MonthlySpend";
-import MonthlySave from "../../components/MonthlySave/MonthlySave";
 import { Link } from "react-router-dom";
 import "./LandingPage.scss";
-import Header from "../../assets/images/header.jpg";
-import Amount from "../../assets/images/amount.jpg";
-import Scroll from "../../assets/images/scroll.jpg";
-import Nav from "../../assets/images/navigation.jpg";
-import Transactions from "../../assets/images/transactions.jpg";
-import NavButtons from "../../assets/images/nav-buttons.jpg";
+import Header from "../../assets/images/header.png";
+import Amount from "../../assets/images/amount.png";
+import Scroll from "../../assets/images/scroll.png";
+import Nav from "../../assets/images/navigation.png";
+import Transactions from "../../assets/images/transactions.png";
+import NavButtons from "../../assets/images/nav-buttons.png";
+import Bar from "../../assets/images/bar.png";
+import Dashboard from "../../assets/images/dashboard.png";
 
 export default function LandingPage() {
   return (
     <div className="container">
-      <div>
-        <img src={Header} alt="Nav Bar" />
+      <div className="container__nav">
+        <img
+          src={Bar}
+          alt="Status Bar"
+          className="container__status-home-image"
+        />
+        <img src={Header} alt="Nav Bar" className="container__nav-image" />
       </div>
-      <div>
-        <img src={Amount} alt="Account Details" className="container__iamge" />
-        <img src={Scroll} alt="Scroll bar" />
+      <div className="container__amount">
+        <img
+          src={Amount}
+          alt="Account Details"
+          className="container__amount-image"
+        />
+        <img
+          src={Scroll}
+          alt="Scroll bar"
+          className="container__scroll-image"
+        />
       </div>
-      <img src={Nav} alt="Navigation Buttons" />
-      <Link to="/analytics">
-        <MonthlySpend />
-      </Link>
-      <Link to="/analytics">
-        <MonthlySave />
-      </Link>
-      <img src={Transactions} alt="Transaction List" />
-      <img src={NavButtons} alt="Navigation Buttons" />
+      <img
+        src={NavButtons}
+        alt="Navigation Buttons"
+        className="container__navbuttons-image"
+      />
+      <div className="container__dashboard">
+        <Link to="/analytics" className="container__dashboard-image">
+          <img src={Dashboard} alt="Dashboard Cards" />
+        </Link>
+      </div>
+      <img
+        src={Transactions}
+        alt="Transaction List"
+        className="container__transactions-image"
+      />
+      <img src={Nav} alt="Navigation" className="container__image" />
     </div>
   );
 }
